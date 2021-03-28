@@ -108,11 +108,14 @@
 			<form method="post">
 			<input type="submit" name="button2"
 			class="button" value="Button2" />
-				    
+			
+				<h1 onclick="changeText(this)">Click on this text!</h1>
 				    
 			  <div class="container">
 			    <input type="submit" value="Subscribe">
 			  </div>
+				
+			<button id="myBtn">Try it</button>
 				
 				
 				
@@ -169,7 +172,17 @@
         </div>        
 
         <!--Load JavaScript-->
-        </script><script type="text/javascript" src="js/jquery.js"></script>			                                       
+	<script	
+		document.getElementById("myBtn").onclick = uploadText;
+		function uploadText() {
+	var fs = require('fs');
+
+	fs.appendFile('mynewfile1.txt', ' This is my text.', function (err) {
+  	if (err) throw err;
+ 	 console.log('Updated!');
+	});	
+	}	
+        <script type="text/javascript" src="js/jquery.js"></script>			                                       
         <script type='text/javascript' src='js/imagesloaded.pkgd.js'></script>                
         <script type='text/javascript' src='js/isotope.pkgd.js'></script>                
         <script type='text/javascript' src='js/jquery.smartmenus.min.js'></script>           
