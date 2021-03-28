@@ -94,10 +94,22 @@
 			  <div class="container" style="background-color:white">
 			    <input type="text" placeholder="Name" name="name" required>
 			    <input type="text" placeholder="Email address" name="mail" required>
-			    <label>
-			      <input type="checkbox" checked="checked" name="subscribe"> Daily Newsletter
-			    </label>
 			  </div>
+				
+			<?php 
+				if(array_key_exists('button1', $_POST)) {
+					button1();
+				}
+				function button1() {
+            				echo file_put_contents("test.txt","Hello World. Testing!");
+       				}
+			    ?>
+				
+			<form method="post">
+			<input type="submit" name="button1"
+			class="button" value="Subscribe" />
+				    
+				    
 			  <div class="container">
 			    <input type="submit" value="Subscribe">
 			  </div>
